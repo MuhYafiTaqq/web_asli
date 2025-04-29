@@ -7,7 +7,7 @@ function App() {
     <div>
       <Navbar />
       <Header />
-      <main className="p-4">
+      <main className="container">
         <AppRoutes />
       </main>
     </div>
