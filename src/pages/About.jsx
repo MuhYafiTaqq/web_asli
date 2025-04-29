@@ -1,4 +1,4 @@
 
 export default function About() {
-    return <h1>About Us</h1>;
+    return <h1 className="text-white">About Us</h1>;
 }
