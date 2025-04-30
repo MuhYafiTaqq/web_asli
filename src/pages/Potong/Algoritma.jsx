@@ -327,12 +327,12 @@ const Algoritma = () => {
 
             <div className='h-1/3 flex items-center'>
                 <div className='w-full'>
-                    <p className="flex items-center gap-2 text-white mb-1 text-sm">
-                        <VscSettings className="h-4 w-4"/>
+                    <p className="flex items-center gap-2 text-white mb-1 text-md">
+                        <VscSettings className="h-5 w-5"/>
                         Type
                     </p>
-                    <div className={`inline-flex w-full p-0.5 py-1.5 justify-between mb-1 border-1 border-white rounded-full relative`}>
-                        <span className={`absolute md:w-40 w-26 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
+                    <div className={`inline-flex w-full p-0.5 py-1.5 justify-evenly mb-1 border-1 border-white rounded-full relative`}>
+                        <span className={`absolute md:w-40 w-34 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
                         <button onClick={() => { setCropMode("grid"); resetGrid(); }} 
                             className={`text-sm md:text-2xl md:w-37 z-2 w-25 px-4 rounded ${cropMode === "grid" ? "text-black font-bold" : "text-white"}`}>
                             Grid
@@ -351,8 +351,8 @@ const Algoritma = () => {
                         <div className="">
                             {(cropMode === "custom" || cropMode === "carousel") && (
                             <>
-                                <p className="flex md:text-2xl items-center gap-2 text-white mb-1 text-sm">
-                                    <HiOutlineViewColumns className="h-4 w-4 md:w-10 md:h-10 md:mb-2"/>
+                                <p className="flex md:text-2xl items-center gap-2 text-white mb-1 text-md">
+                                    <HiOutlineViewColumns className="h-5 w-5 md:w-10 md:h-10 md:mb-2"/>
                                     Columns
                                 </p>
                                 <div className='flex justify-center items-center'>
@@ -371,8 +371,8 @@ const Algoritma = () => {
                         <div className="">
                             {(cropMode === "custom" || cropMode === "grid") && (
                             <>
-                                <p className="flex md:text-2xl items-center gap-2 text-white mb-1 text-sm">
-                                    <LuRows3 className="w-4 h-4 md:w-10 md:h-10 md:mb-2"/>
+                                <p className="flex md:text-2xl items-center gap-2 text-white mb-1 text-md">
+                                    <LuRows3 className="w-5 h-5 md:w-10 md:h-10 md:mb-2"/>
                                     Rows
                                 </p>
                                 <div className='flex justify-center items-center'>
