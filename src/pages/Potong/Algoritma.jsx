@@ -315,7 +315,7 @@ const Algoritma = () => {
                 }
 
             }
-            setCroppedImages(croppedData);
+            setCroppedImages(croppedData); 
             navigate("/Result", { state: { croppedImages: croppedData } });
         };
     };
