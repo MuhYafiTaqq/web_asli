@@ -20,7 +20,7 @@ export default function Home() {
                 setImage(imageData); 
 
                 // 🚀 Langsung navigasi ke halaman crop
-                navigate("/setings", { state: { image: imageData } });
+                navigate("/Algoritma", { state: { image: imageData } });
             };
         }
     };
@@ -46,10 +46,10 @@ export default function Home() {
         handleFile(file);
     };
     return (
-        <div className="h-dvh px-3 pt-10 pb-2 flex flex-col gap-7 justify-center items-center">
+        <div className="h-dvh px-3 pt-10 pb-20 flex flex-col gap-7 justify-center items-center">
             <img className='h-50' src={Starship} alt="" />
             <div 
-                className={`relative w-75 h-35 rounded-3xl border-2 border-dashed text-center ${
+                className={`relative w-75 h-35 mb-5 rounded-3xl border-2 border-dashed text-center ${
                     isDragging ? "border-blue-400 bg-blue-900/50" : "border-white/20 bg-neutral-700/50"
                 } flex flex-col justify-center items-center transition-all duration-300`}
                 onDragOver={handleDragOver}
@@ -73,9 +73,6 @@ export default function Home() {
                     id="inputImg" 
                     onChange={handleFileChange}
                 />
-
-                {/* Preview gambar */}
-                {image && <img src={image} alt="Preview" className="w-40 h-40 object-cover mt-4" />}
             </div>
         </div>
     
