@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { VscSettings } from "react-icons/vsc";
 import { HiOutlineViewColumns } from "react-icons/hi2";
 import { LuRows3 } from "react-icons/lu";
+import { GoPlus } from "react-icons/go";
+import { HiOutlineMinusSm } from "react-icons/hi";
 
 const Algoritma = () => {
     const location = useLocation();
@@ -320,16 +322,16 @@ const Algoritma = () => {
     return (
         <div className='h-dvh px-3 pt-12 pb-20 flex flex-col'>
             <div ref={prevRef} className="flex flex-col justify-center h-3/4 items-center ">
-                <canvas ref={canvasRef}></canvas>
+                <canvas ref={canvasRef} className='border-1 border-white/35'></canvas>
             </div>
 
-            <div className='h-1/3 flex items-center border-t-1 border-white/25'>
+            <div className='h-1/3 flex items-center'>
                 <div className='w-full'>
-                    <p className="flex items-center gap-2 text-white mb-1 md:text-2xl text-sm">
+                    <p className="flex items-center gap-2 text-white mb-1 text-sm">
                         <VscSettings className="h-4 w-4"/>
                         Type
                     </p>
-                    <div className={`inline-flex w-full p-0.5 justify-between mb-2 border-1 border-white rounded-full relative`}>
+                    <div className={`inline-flex w-full p-0.5 py-1.5 justify-between mb-1 border-1 border-white rounded-full relative`}>
                         <span className={`absolute md:w-40 w-26 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
                         <button onClick={() => { setCropMode("grid"); resetGrid(); }} 
                             className={`text-sm md:text-2xl md:w-37 z-2 w-25 px-4 rounded ${cropMode === "grid" ? "text-black font-bold" : "text-white"}`}>
@@ -353,13 +355,15 @@ const Algoritma = () => {
                                     <HiOutlineViewColumns className="h-4 w-4 md:w-10 md:h-10 md:mb-2"/>
                                     Columns
                                 </p>
-                                <button onClick={handleRemoveColumn} className="text-lg bg-white text-black font-bold px-2.5 rounded-full mb-2">
-                                    -
-                                </button>
-                                <h6 className="inline-flex text-white px-4">{gridCols}</h6>
-                                <button onClick={handleAddColumn} className="text-lg bg-white text-black font-bold px-2 rounded-full mb-2">
-                                    +
-                                </button>
+                                <div className='flex justify-center items-center'>
+                                    <button onClick={handleRemoveColumn} className="relative text-lg bg-white text-black font-bold w-8 h-8 rounded-full">
+                                        <HiOutlineMinusSm className='absolute top-2 left-1.5' />
+                                    </button>
+                                    <h6 className="inline-flex text-white px-4">{gridCols}</h6>
+                                    <button onClick={handleAddColumn} className=" relative text-lg bg-white text-black font-bold  w-8 h-8 rounded-full">
+                                        <GoPlus className='absolute top-2 left-1.5' />
+                                    </button>
+                                </div>
                             </>
                             )}
                         </div>
@@ -371,19 +375,21 @@ const Algoritma = () => {
                                     <LuRows3 className="w-4 h-4 md:w-10 md:h-10 md:mb-2"/>
                                     Rows
                                 </p>
-                                <button onClick={handleRemoveRow} className="text-lg bg-white text-black font-bold px-2.5 md:py-1 md:px-3 rounded-full mb-2">
-                                    -
-                                </button>
-                                <h6 className="inline-flex text-white px-4">{gridRows}</h6>
-                                <button onClick={handleAddRow} className="text-lg bg-white text-black md:py-1 md:px-3 font-bold px-2 rounded-full mb-2">
-                                    +
-                                </button>
+                                <div className='flex justify-center items-center'>
+                                    <button onClick={handleRemoveRow} className="relative text-lg bg-white text-black font-bold w-8 h-8 rounded-full">
+                                        <HiOutlineMinusSm className='absolute top-2 left-1.5' />
+                                    </button>
+                                    <h6 className="inline-flex text-white px-4">{gridRows}</h6>
+                                    <button onClick={handleAddRow} className="relative text-lg bg-white text-black w-8 h-8 font-bold rounded-full">
+                                        <GoPlus className='absolute top-2 left-1.5' />
+                                    </button>
+                                </div>
                             </>
                             )}
                         </div>
                     </div>
                     <div className="w-full flex mt-4 gap-2">
-                        <button onClick={handleCrop} className="text-sm bg-green-700 font-bold text-white w-1/2 py-1.5 rounded-full">Cut Image</button>
+                        <button onClick={handleCrop} className="text-sm bg-green-700 font-bold text-white w-1/2 py-2 rounded-full">Cut Image</button>
                         <button onClick={() => navigate("/Home")} className="text-sm border-1 border-white text-white w-1/2 py-0.5 rounded-full">Back</button>
                     </div>
                 </div>
