@@ -331,8 +331,8 @@ const Algoritma = () => {
                         <VscSettings className="h-5 w-5"/>
                         Type
                     </p>
-                    <div className={`inline-flex w-full p-0.5 py-1.5 justify-evenly mb-1 border-1 border-white rounded-full relative`}>
-                        <span className={`absolute md:w-40 w-34 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
+                    <div className={`inline-flex w-full p-0.5 py-1.5 justify-between border-1 border-white rounded-full relative`}>
+                        <span className={`absolute md:w-40 w-27 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
                         <button onClick={() => { setCropMode("grid"); resetGrid(); }} 
                             className={`text-sm md:text-2xl md:w-37 z-2 w-25 px-4 rounded ${cropMode === "grid" ? "text-black font-bold" : "text-white"}`}>
                             Grid
@@ -347,7 +347,7 @@ const Algoritma = () => {
                         </button>
                     </div>
 
-                    <div className={`flex ${cropMode != "grid" ? "gap-5" : "" } mt-2`}>
+                    <div className={`flex ${cropMode != "grid" ? "gap-5" : "" } mt-1`}>
                         <div className="">
                             {(cropMode === "custom" || cropMode === "carousel") && (
                             <>
