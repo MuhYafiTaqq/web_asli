@@ -83,9 +83,6 @@ const Algoritma = () => {
         if (cropMode === "grid") {
             cellWidth = canvas.width / 3;
             cellHeight = cellWidth * 3 * aspectRatio;
-
-            console.log(cellHeight);
-            console.log(canvas.height);
             
             let totalWidth = cellWidth * 3;
             let totalHeight = cellHeight * gridRows;
@@ -322,17 +319,17 @@ const Algoritma = () => {
 
     return (
         <div className='h-dvh px-3 pt-12 pb-20 flex flex-col'>
-            <div ref={prevRef} className="flex flex-col justify-center h-3/4 items-center border-2 border-amber-200">
+            <div ref={prevRef} className="flex flex-col justify-center h-3/4 items-center ">
                 <canvas ref={canvasRef}></canvas>
             </div>
 
-            <div className='h-1/3 flex items-center justify-center border-t-1 border-white/25'>
-                <div>
+            <div className='h-1/3 flex items-center border-t-1 border-white/25'>
+                <div className='w-full'>
                     <p className="flex items-center gap-2 text-white mb-1 md:text-2xl text-sm">
-                        <VscSettings className="h-4 w-4 md:w-10 md:h-10"/>
+                        <VscSettings className="h-4 w-4"/>
                         Type
                     </p>
-                    <div className={`inline-flex p-0.5 justify-between mb-2 md:mb-5 border-1 md:gap-1.5 border-white rounded-full relative`}>
+                    <div className={`inline-flex w-full p-0.5 justify-between mb-2 border-1 border-white rounded-full relative`}>
                         <span className={`absolute md:w-40 w-26 h-full bg-amber-50 top-0 rounded-full z-1 ${cropMode === "grid" ? "left-0" : cropMode === "custom" ? "right-0" : "left-1/2 transform -translate-x-1/2 md:right-40"}`}></span>
                         <button onClick={() => { setCropMode("grid"); resetGrid(); }} 
                             className={`text-sm md:text-2xl md:w-37 z-2 w-25 px-4 rounded ${cropMode === "grid" ? "text-black font-bold" : "text-white"}`}>
@@ -348,7 +345,7 @@ const Algoritma = () => {
                         </button>
                     </div>
 
-                    <div className={`flex ${cropMode != "grid" ? "gap-5" : "" } md:text-2xl`}>
+                    <div className={`flex ${cropMode != "grid" ? "gap-5" : "" } mt-2`}>
                         <div className="">
                             {(cropMode === "custom" || cropMode === "carousel") && (
                             <>
@@ -356,11 +353,11 @@ const Algoritma = () => {
                                     <HiOutlineViewColumns className="h-4 w-4 md:w-10 md:h-10 md:mb-2"/>
                                     Columns
                                 </p>
-                                <button onClick={handleRemoveColumn} className="text-lg md:w-10 md:text-2xl bg-white text-black font-bold md:py-1 md:px-3 px-2 rounded-full mb-2">
+                                <button onClick={handleRemoveColumn} className="text-lg bg-white text-black font-bold px-2.5 rounded-full mb-2">
                                     -
                                 </button>
                                 <h6 className="inline-flex text-white px-4">{gridCols}</h6>
-                                <button onClick={handleAddColumn} className="text-lg bg-white text-black md:text-2xl font-bold px-2 md:py-1 md:px-3 rounded-full mb-2">
+                                <button onClick={handleAddColumn} className="text-lg bg-white text-black font-bold px-2 rounded-full mb-2">
                                     +
                                 </button>
                             </>
@@ -374,20 +371,20 @@ const Algoritma = () => {
                                     <LuRows3 className="w-4 h-4 md:w-10 md:h-10 md:mb-2"/>
                                     Rows
                                 </p>
-                                <button onClick={handleRemoveRow} className="text-lg md:text-2xl bg-white text-black font-bold px-2 md:py-1 md:px-3 rounded-full mb-2">
+                                <button onClick={handleRemoveRow} className="text-lg bg-white text-black font-bold px-2.5 md:py-1 md:px-3 rounded-full mb-2">
                                     -
                                 </button>
                                 <h6 className="inline-flex text-white px-4">{gridRows}</h6>
-                                <button onClick={handleAddRow} className="text-lg md:text-2xl bg-white text-black md:py-1 md:px-3 font-bold px-2 rounded-full mb-2">
+                                <button onClick={handleAddRow} className="text-lg bg-white text-black md:py-1 md:px-3 font-bold px-2 rounded-full mb-2">
                                     +
                                 </button>
                             </>
                             )}
                         </div>
                     </div>
-                    <div className="w-full flex">
-                        <button onClick={handleCrop} className="mt-2 text-sm bg-green-700 font-bold border-2 border-green-800 text-white w-1/2 py-0.5 rounded-full">Cut Image</button>
-                        <button onClick={() => navigate("/Home")} className="mt-2 text-sm border-2 border-white text-white ml-5 w-1/2 py-0.5 rounded-full">Back</button>
+                    <div className="w-full flex mt-4 gap-2">
+                        <button onClick={handleCrop} className="text-sm bg-green-700 font-bold text-white w-1/2 py-1.5 rounded-full">Cut Image</button>
+                        <button onClick={() => navigate("/Home")} className="text-sm border-1 border-white text-white w-1/2 py-0.5 rounded-full">Back</button>
                     </div>
                 </div>
             </div>
