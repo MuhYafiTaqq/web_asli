@@ -46,22 +46,22 @@ export default function Home() {
         handleFile(file);
     };
     return (
-        <div className="h-dvh px-3 pt-10 pb-20 flex flex-col gap-7 justify-center items-center">
-            <img className='h-50' src={Starship} alt="" />
+        <div className="h-dvh px-3 pt-10 pb-20 flex flex-col gap-7 justify-center items-center md:gap-10">
+            <img className='h-50 md:h-75' src={Starship} alt="" />
             <div 
                 className={`relative w-75 h-35 mb-5 rounded-3xl border-2 border-dashed text-center ${
                     isDragging ? "border-blue-400 bg-blue-900/50" : "border-white/20 bg-neutral-700/50"
-                } flex flex-col justify-center items-center transition-all duration-300`}
+                } flex flex-col justify-center items-center transition-all duration-300 md:w-130 md:h-60 md:rounded-5xl`}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current.click()}
             >
-                <GoFileSymlinkFile className="text-3xl mb-4 text-white" />
-                <h6 className="text-white text-md font-bold mb-1">
+                <GoFileSymlinkFile className="text-3xl mb-4 text-white md:text-5xl md:mb-8" />
+                <h6 className="text-white text-md font-bold mb-1 md:text-2xl">
                     {isDragging ? "Drop the file here" : "Drag or click to select a file"}
                 </h6>
-                <p className="text-white text-xs opacity-50">
+                <p className="text-white text-xs opacity-50 md:text-lg">
                     Supported format: PNG, JPG, JPEG
                 </p>
 

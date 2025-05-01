@@ -7,9 +7,11 @@ function App() {
     <div>
       <Navbar />
       <Header />
-      <main className="container">
-        <AppRoutes />
-      </main>
+      <div className='md:ml-60'>
+        <main className="container md:mx-auto">
+          <AppRoutes />
+        </main>
+      </div>
     </div>
   );
 }
